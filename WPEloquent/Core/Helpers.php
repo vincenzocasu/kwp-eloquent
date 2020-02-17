@@ -4,6 +4,9 @@
     class Helpers {
         // a copy of wp's is_serialized
         public static function isSerialized ($data, $strict = true) {
+            if (function_exists('is_serialized')) {
+                return is_serialized($data, $strict);
+            }
             // if it isn't a string, it isn't serialized.
             if ( ! is_string( $data ) ) {
                 return false;
