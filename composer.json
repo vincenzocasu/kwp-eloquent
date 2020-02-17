@@ -26,6 +26,10 @@
             "WPEloquent\\": "WPEloquent/"
         }
     },
+    "replace": {
+        "drewjbartlett/wordpress-eloquent": "0.2.*",
+        "tareq1988/wp-eloquent": "1.*"
+    },
     "license": "MIT",
     "minimum-stability": "dev"
 }
