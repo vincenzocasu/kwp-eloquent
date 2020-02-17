@@ -15,7 +15,8 @@ This is a great boiler plate based off [Eloquent](https://laravel.com/docs/5.4/e
 
 ## Overview
  - [Installation](#installation)
- - [Setup](#setup)
+ - [Setup](#setup---common)
+ - [Setup with Laravel](#setup-with-laravel)
  - [Posts](#posts)
  - [Comments](#comments)
  - [Terms](#terms)
@@ -30,7 +31,7 @@ This is a great boiler plate based off [Eloquent](https://laravel.com/docs/5.4/e
 
     composer require mallardduck/wordpress-eloquent
 
-### Setup
+### Setup - Common
 
 ```php
 require_once('vendor/autoload.php');
@@ -62,6 +63,33 @@ require_once('vendor/autoload.php');
 ```
 
 If you wanted to enable this on your entire WP install you could create a file with the above code to drop in the `mu-plugins` folder.
+
+### Setup with Laravel
+
+These directions are for when you want to work with WordPress database using Eloqent inside Laravel. The easiest mehtod is making a new config inside Laravel's `config/database.php`. For example:
+
+```php
+    'wordpress' => [
+        'driver' => 'mysql',
+        'url' => env('DATABASE_URL'),
+        'host' => env('DB_HOST', '127.0.0.1'),
+        'port' => env('DB_PORT', '3306'),
+        'database' => env('DB_NAME', 'wordpress'),
+        'username' => env('DB_USER', 'forge'),
+        'password' => env('DB_PASSWORD', ''),
+        'unix_socket' => env('DB_SOCKET', ''),
+        'charset' => 'utf8mb4',
+        'collation' => 'utf8mb4_unicode_ci',
+        'prefix' => env('DB_PREFIX', 'wp_'),
+        'prefix_indexes' => true,
+        'strict' => true,
+        'engine' => null,
+        'options' => extension_loaded('pdo_mysql') ? array_filter([
+            PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+        ]) : [],
+    ],
+```
+*Note:* In this example the WordPress database and Laravel database can be accessed on the same server by the same MySQL user. The laravel `.env` of your project may need to be adjusted to match this example.
 
 ### Posts
 
