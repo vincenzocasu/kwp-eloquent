@@ -2,7 +2,9 @@
 
 namespace WPEloquent\Model\Term;
 
-class Taxonomy extends \Illuminate\Database\Eloquent\Model {
+use WPEloquent\Model\BaseModel;
+
+class Taxonomy extends BaseModel {
     protected $table = 'term_taxonomy';
 
     public function term() {

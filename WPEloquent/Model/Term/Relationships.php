@@ -2,8 +2,9 @@
 
 namespace WPEloquent\Model\Term;
 
-class Relationships extends \Illuminate\Database\Eloquent\Model {
+use WPEloquent\Model\BaseModel;
+
+class Relationships extends BaseModel {
     protected $table = 'term_relationships';
     protected $primaryKey = 'term_taxonomy_id';
-
 }

@@ -4,7 +4,7 @@ namespace WPEloquent\Model;
 
 use \WPEloquent\Traits\HasMeta;
 
-class Term extends \Illuminate\Database\Eloquent\Model  {
+class Term extends BaseModel {
 
     use HasMeta;
 

@@ -2,10 +2,8 @@
 
 namespace WPEloquent\Model\Term;
 
-class Meta extends \Illuminate\Database\Eloquent\Model {
+use WPEloquent\Model\BaseMeta;
+
+class Meta extends BaseMeta {
     protected $table = 'term_meta';
-    protected $fillable = ['meta_key', 'meta_value'];
-    protected $primaryKey = 'meta_id';
-
-
 }

@@ -4,14 +4,13 @@ namespace WPEloquent\Model;
 
 use \WPEloquent\Traits\HasMeta;
 
-class Post extends  \Illuminate\Database\Eloquent\Model {
+class Post extends BaseModel {
 
     use HasMeta;
 
     protected $table      = 'posts';
     protected $primaryKey = 'ID';
     protected $post_type = null;
-    public $timestamps    = false;
 
     const CREATED_AT = 'post_date';
 	const UPDATED_AT = 'post_modified';

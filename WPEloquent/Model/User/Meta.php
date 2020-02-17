@@ -2,10 +2,10 @@
 
 namespace WPEloquent\Model\User;
 
-class Meta extends \Illuminate\Database\Eloquent\Model {
+use WPEloquent\Model\BaseMeta;
+
+class Meta extends BaseMeta {
     protected $table   = 'usermeta';
-    public $timestamps = false;
-    protected $fillable = ['meta_key', 'meta_value'];
     protected $primaryKey = 'umeta_id';
 
     public function user () {

@@ -5,13 +5,12 @@ namespace WPEloquent\Model;
 use WPEloquent\Traits\HasMeta;
 use WPEloquent\Traits\HasRoles;
 
-class User extends \Illuminate\Database\Eloquent\Model  {
+class User extends BaseModel {
 
     use HasMeta, HasRoles;
 
     protected $table      = 'users';
     protected $primaryKey = 'ID';
-    public $timestamps    = false;
 
     const CREATED_AT = 'user_registered';
 

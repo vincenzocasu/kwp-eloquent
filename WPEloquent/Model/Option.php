@@ -4,10 +4,9 @@ namespace WPEloquent\Model;
 
 use WPEloquent\Core\Helpers;
 
-class Option extends \Illuminate\Database\Eloquent\Model {
+class Option extends BaseModel {
     protected $table      = 'options';
     protected $primaryKey = 'option_id';
-    public $timestamps    = false;
 
     public static function getValue ($key = '') {
         $value = '';
