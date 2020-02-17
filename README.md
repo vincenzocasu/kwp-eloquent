@@ -1,13 +1,17 @@
-<h2>Wordpress Laravel Eloquent Models</h2>
+# Wordpress Laravel Eloquent Models
 
 <p align="center">
 <img src="http://drewjbartlett.com/images/github/logo-laravel.svg">
 <img src="http://drewjbartlett.com/images/github/wordpress-logo.png">
 </p>
 
-A library that converts converts wordpress tables into [Laravel Eloquent Models](https://laravel.com/docs/5.3/eloquent). This is helpful for dropping into any wordpress project where maybe you'd rather use the awesome features of Laravel's Eloquent Models. Or maybe you're writing an API with something like [Slim](https://www.slimframework.com/) or better yet [Lumen](https://lumen.laravel.com/) don't want to increase your load time by loading the entire WP core. This is a great boiler plate based off [Eloquent](https://laravel.com/docs/5.3/eloquent) by Laravel to get you going.
+A library that converts converts wordpress tables into [Laravel Eloquent Models](https://laravel.com/docs/5.4/eloquent). This is can be helpful for any wordpress project where maybe you'd rather use the awesome features of Laravel's Eloquent.
 
-** This is documentation for additional functionality on top of Eloquent. For documentation on all of Eloquent's features you visit the [documentation](https://laravel.com/docs/5.3/eloquent).
+Or maybe you're building a project using Laravel and Roots Bedrock/Sage/etc and want to access WordPress data within Laravel. Or maybe you're writing an API with something like [Slim](https://www.slimframework.com/) or better yet [Lumen](https://lumen.laravel.com/) don't want to increase your load time by loading the entire WP core.
+
+This is a great boiler plate based off [Eloquent](https://laravel.com/docs/5.4/eloquent) by Laravel to get you going.
+
+*Note:* This is documentation for additional functionality on top of Eloquent. For documentation on all of Eloquent's features you visit the [documentation](https://laravel.com/docs/5.4/eloquent).
 
 ## Overview
  - [Installation](#installation)
@@ -24,7 +28,7 @@ A library that converts converts wordpress tables into [Laravel Eloquent Models]
 
 ### Installation
 
-    composer require drewjbartlett/wordpress-eloquent
+    composer require mallardduck/wordpress-eloquent
 
 ### Setup
 
