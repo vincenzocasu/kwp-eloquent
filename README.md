@@ -43,12 +43,12 @@ composer require mallardduck/wp-eloquent-models
 |-------------|------------|---------------|---------------|----------|-------------------------|-----------------|
 | v0.2.1    | Upstream | `drewjbartlett/wordpress-eloquent` | `WPEloquent` | [v0.2.1][upstream-latest-repo] | `5.4.*`    | `>= 5.6.4`      |
 | v0.3.x    | Maintained | `mallardduck/wp-eloquent-models` | `WPEloquent` | [v0.3.0][wpeloquent-v0.3.0]  | `5.5`   | `>= 7.1`      |
-| v0.4.x    | Maintained | `mallardduck/wp-eloquent-models` | `WPEloquent` | [v0.4.0][wpeloquent-v0.4.0]  | `5.7.10 or 5.8`   | `>= 7.1.3`      |
+| v0.4.x    | Maintained | `mallardduck/wp-eloquent-models` | `WPEloquent` | [v0.4.1][wpeloquent-v0.4.1]  | `5.7.10 or 5.8 or 6.x`   | `>= 7.2`      |
 
 
 [upstream-latest-repo]: https://github.com/drewjbartlett/wordpress-eloquent/tree/v0.2.1
 [wpeloquent-v0.3.0]: https://github.com/mallardduck/wp-eloquent-models/tree/v0.3.0
-[wpeloquent-v0.4.0]: https://github.com/mallardduck/wp-eloquent-models/tree/v0.4.0
+[wpeloquent-v0.4.1]: https://github.com/mallardduck/wp-eloquent-models/tree/v0.4.1
 
 ## Setup - Common
 
