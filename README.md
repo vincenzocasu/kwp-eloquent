@@ -39,8 +39,8 @@ composer require mallardduck/wordpress-eloquent
 
 ## Version Guidance
 
-| Version | Status     | Packagist           | Namespace    | Repo                | `illuminate/database` | PHP Version |
-|---------|------------|---------------------|--------------|---------------------|---------------------|-------|-------------|
+| Version     | Status     | Packagist     | Namespace     | Repo     | illuminate/database     | PHP Version     |
+|-------------|------------|---------------|---------------|----------|-------------------------|-----------------|
 | v0.2.1    | Upstream | `drewjbartlett/wordpress-eloquent` | `WPEloquent` | [v0.2.1][upstream-latest-repo] | `5.4.*`    | `>= 5.6.4`      |
 | 0.3.x    | Maintained | `mallardduck/wordpress-eloquent` | `WPEloquent` | [0.3.0][wpeloquent-0.3.0]  | `5.5`   | `>= 7.1`      |
 
