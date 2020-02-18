@@ -42,10 +42,10 @@ composer require mallardduck/wp-eloquent-models
 | Version     | Status     | Packagist     | Namespace     | Repo     | illuminate/database     | PHP Version     |
 |-------------|------------|---------------|---------------|----------|-------------------------|-----------------|
 | v0.2.1    | Upstream | `drewjbartlett/wordpress-eloquent` | `WPEloquent` | [v0.2.1][upstream-latest-repo] | `5.4.*`    | `>= 5.6.4`      |
-| 0.3.x    | Maintained | `mallardduck/wp-eloquent-models` | `WPEloquent` | [0.3.0][wpeloquent-0.3.0]  | `5.5`   | `>= 7.1`      |
+| v0.3.x    | Maintained | `mallardduck/wp-eloquent-models` | `WPEloquent` | [v0.3.0][wpeloquent-v0.3.0]  | `5.5`   | `>= 7.1`      |
 
 [upstream-latest-repo]: https://github.com/drewjbartlett/wordpress-eloquent/tree/v0.2.1
-[wpeloquent-0.3.0]: https://github.com/mallardduck/wp-eloquent-models/tree/v0.3.0
+[wpeloquent-v0.3.0]: https://github.com/mallardduck/wp-eloquent-models/tree/v0.3.0
 
 ## Setup - Common
 

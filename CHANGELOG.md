@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [0.3.0] - 2020-02-17
+## [v0.3.0] - 2020-02-17
 ### Added
 - Added CHANGELOG.md file
 - Added BaseModel and BaseMeta classes.
