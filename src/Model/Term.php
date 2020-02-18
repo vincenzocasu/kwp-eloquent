@@ -2,18 +2,18 @@
 
 namespace WPEloquent\Model;
 
-use \WPEloquent\Traits\HasMeta;
+use WPEloquent\Traits\HasMeta;
 
-class Term extends BaseModel {
-
+class Term extends BaseModel
+{
     use HasMeta;
 
     protected $table = 'terms';
     protected $primaryKey = 'term_id';
 
-    public function meta() {
+    public function meta()
+    {
         return $this->hasMany(\WPEloquent\Model\Term\Meta::class, 'term_id')
                     ->select(['term_id', 'meta_key', 'meta_value']);
     }
-
 }

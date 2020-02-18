@@ -1,9 +1,11 @@
 <?php
+
 namespace WPEloquent\Core;
 
 use Config;
 
-class Laravel {
+class Laravel
+{
 
     protected static $_capsule;
 
@@ -13,7 +15,8 @@ class Laravel {
      * @return [type]          [description]
      * @author drewjbartlett
      */
-    public static function connect ($options = []) {
+    public static function connect($options = [])
+    {
 
         $defaults = [
             'global' => true,
@@ -37,8 +40,7 @@ class Laravel {
 
         $options = array_replace_recursive($defaults, $options);
 
-        if(is_null(self::$_capsule)) {
-
+        if (is_null(self::$_capsule)) {
             self::$_capsule = new \Illuminate\Database\Capsule\Manager();
 
             self::$_capsule->addConnection([
@@ -55,22 +57,29 @@ class Laravel {
 
             self::$_capsule->bootEloquent();
 
-            if($options['events']) self::$_capsule->setEventDispatcher(new \Illuminate\Events\Dispatcher);
+            if ($options['events']) {
+                self::$_capsule->setEventDispatcher(new \Illuminate\Events\Dispatcher());
+            }
 
-            if($options['global']) self::$_capsule->setAsGlobal();
+            if ($options['global']) {
+                self::$_capsule->setAsGlobal();
+            }
 
-            if($options['log']) self::$_capsule->getConnection()->enableQueryLog();
-
+            if ($options['log']) {
+                self::$_capsule->getConnection()->enableQueryLog();
+            }
         }
 
         return self::$_capsule;
     }
 
-    public static function getConnection () {
+    public static function getConnection()
+    {
         return self::$_capsule->getConnection();
     }
 
-    public static function queryLog () {
+    public static function queryLog()
+    {
         return self::getConnection()->getQueryLog();
     }
 }

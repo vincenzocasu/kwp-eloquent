@@ -3,9 +3,10 @@
 namespace WPEloquent\Model;
 
 use WPEloquent\Traits\HasWordPressDbConn;
-use \Illuminate\Database\Eloquent\Model as EloquentModel;
+use Illuminate\Database\Eloquent\Model as EloquentModel;
 
-class BaseModel extends EloquentModel {
+class BaseModel extends EloquentModel
+{
     use HasWordPressDbConn;
 
     public $timestamps = false;
@@ -14,8 +15,8 @@ class BaseModel extends EloquentModel {
     {
         $this->class_hash = md5(get_class($this));
 
-        if ( ! $this->traitInitedForClass($this->class_hash) ) {
-          $this->initializeHasWordPressDbConn();
+        if (! $this->traitInitedForClass($this->class_hash)) {
+            $this->initializeHasWordPressDbConn();
         }
 
         parent::__construct($attributes);

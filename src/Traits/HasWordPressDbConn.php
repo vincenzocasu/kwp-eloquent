@@ -2,7 +2,8 @@
 
 namespace WPEloquent\Traits;
 
-trait HasWordPressDbConn {
+trait HasWordPressDbConn
+{
 
     protected static $default_connection;
     protected static $WPE_HWDC_initialized = [];
@@ -23,9 +24,9 @@ trait HasWordPressDbConn {
 
     protected function traitInitedForClass(): bool
     {
-      if ( ! isset( self::$WPE_HWDC_initialized[$this->class_hash] ) ) {
-          self::$WPE_HWDC_initialized[$this->class_hash] = false;
-      }
-      return self::$WPE_HWDC_initialized[$this->class_hash];
+        if (! isset(self::$WPE_HWDC_initialized[$this->class_hash])) {
+            self::$WPE_HWDC_initialized[$this->class_hash] = false;
+        }
+        return self::$WPE_HWDC_initialized[$this->class_hash];
     }
 }
