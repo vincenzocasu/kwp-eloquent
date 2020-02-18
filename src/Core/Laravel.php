@@ -3,20 +3,29 @@
 namespace WPEloquent\Core;
 
 use Config;
+use Illuminate\Database\Capsule\Manager;
 
+/**
+ * WP Eloquent Laravel Shim Class
+ *
+ * Used to setup and boot Eloquent when outside of Laravel.
+ */
 class Laravel
 {
 
+    /**
+     * @var \Illuminate\Database\Capsule\Manager
+     */
     // phpcs:ignore
     protected static $_capsule;
 
     /**
-     * [capsule description]
-     * @param  array  $options [description]
-     * @return [type]          [description]
-     * @author drewjbartlett
+     * Create and connect Laravel DB Manager outside Laravel.
+     *
+     * @param array $options
+     * @return Manager
      */
-    public static function connect($options = [])
+    public static function connect($options = []): Manager
     {
 
         $defaults = [
@@ -42,7 +51,7 @@ class Laravel
         $options = array_replace_recursive($defaults, $options);
 
         if (is_null(self::$_capsule)) {
-            self::$_capsule = new \Illuminate\Database\Capsule\Manager();
+            self::$_capsule = new Manager();
 
             self::$_capsule->addConnection([
                 'driver'    => 'mysql',
@@ -74,11 +83,17 @@ class Laravel
         return self::$_capsule;
     }
 
+    /**
+     * @return \Illuminate\Database\Connection
+     */
     public static function getConnection()
     {
         return self::$_capsule->getConnection();
     }
 
+    /**
+     * @return array
+     */
     public static function queryLog()
     {
         return self::getConnection()->getQueryLog();

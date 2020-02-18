@@ -6,7 +6,11 @@ use WPEloquent\Core\Helpers;
 
 class Option extends BaseModel
 {
+    
+    /** @var string */
     protected $table      = 'options';
+    
+    /** @var string */
     protected $primaryKey = 'option_id';
 
     public static function getValue($key = '')

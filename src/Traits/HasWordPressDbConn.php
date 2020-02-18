@@ -5,15 +5,33 @@ namespace WPEloquent\Traits;
 trait HasWordPressDbConn
 {
 
-    protected static $default_connection;
-    protected static $WPE_HWDC_initialized = [];
+    /** @var string */
     public $class_hash;
 
+    /** @var string */
+    protected static $default_connection;
+
+    /**
+     * @var array<string, bool>
+     */
+    protected static $WPE_HWDC_initialized = [];
+
+    /**
+     * Allows setting a default connection on the model.
+     *
+     * @param string $connection
+     * @return void
+     */
     public static function setDefaultConnection(string $connection)
     {
         self::$default_connection = $connection;
     }
 
+    /**
+     * Initializes this trait and tracks which class just inited.
+     *
+     * @return void
+     */
     protected function initializeHasWordPressDbConn()
     {
         if (isset(self::$default_connection)) {
@@ -22,6 +40,11 @@ trait HasWordPressDbConn
         }
     }
 
+    /**
+     * Determines which classes this trait is initilized with.
+     *
+     * @return boolean
+     */
     protected function traitInitedForClass(): bool
     {
         if (! isset(self::$WPE_HWDC_initialized[$this->class_hash])) {

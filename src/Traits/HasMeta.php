@@ -7,7 +7,13 @@ use WPEloquent\Core\Helpers;
 trait HasMeta
 {
 
-    public function getMeta($meta_key = false)
+    /**
+     * Retrieves a meta filed.
+     *
+     * @param null|string $meta_key
+     * @return void
+     */
+    public function getMeta(?string $meta_key)
     {
         $meta_value = '';
 
@@ -22,22 +28,30 @@ trait HasMeta
         return $meta_value;
     }
 
-    public function setMeta($key, $value)
+    /**
+     * Updates a meta field.
+     *
+     * @param string $meta_key
+     * @param mixed $value
+     * @return self
+     */
+    public function setMeta(string $meta_key, $value): self
     {
         $value = is_array($value) ? serialize($value) : $value;
-        $meta  = $this->meta()->firstOrCreate(['meta_key' => $key]);
-        $meta  = $this->meta()->where(['meta_key' => $key])->update(['meta_value' => $value]);
+        $meta  = $this->meta()->firstOrCreate(['meta_key' => $meta_key]);
+        $meta  = $this->meta()->where(['meta_key' => $meta_key])->update(['meta_value' => $value]);
 
         return $this;
     }
 
     /**
      * Deletes all meta for this object with given key
+     *
+     * @param string $meta_key
+     * @return void
      */
-    public function deleteMeta($meta_key = false)
+    public function deleteMeta(string $meta_key)
     {
-        if ($meta_key) {
-            $this->meta()->where('meta_key', $meta_key)->delete();
-        }
+        $this->meta()->where('meta_key', $meta_key)->delete();
     }
 }

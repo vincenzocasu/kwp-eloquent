@@ -4,6 +4,9 @@ namespace WPEloquent\Model;
 
 abstract class BaseMeta extends BaseModel
 {
-    protected $fillable = ['meta_key', 'meta_value'];
+    /** @var string */
     protected $primaryKey = 'meta_id';
+
+    /** @var string */
+    protected $fillable = ['meta_key', 'meta_value'];
 }

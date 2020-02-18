@@ -1,10 +1,23 @@
 <?php
 
-    namespace WPEloquent\Core;
+namespace WPEloquent\Core;
 
+/**
+ * WP Eloquent Core Helpers
+ */
 class Helpers
 {
-    // a copy of wp's is_serialized
+
+    /**
+     * A copy of WordPress's `is_serialized` function.
+     *
+     * If within WordPress executino space it'll call the WordPress function, or
+     * it will us our fallback shim when outside WordPress.
+     *
+     * @param mixed $data
+     * @param boolean $strict
+     * @return boolean
+     */
     public static function isSerialized($data, $strict = true)
     {
         if (function_exists('is_serialized')) {

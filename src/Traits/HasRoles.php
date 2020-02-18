@@ -4,12 +4,21 @@ namespace WPEloquent\Traits;
 
 trait HasRoles
 {
-    public function hasRole($role = '')
+
+    /**
+     * @param string $role
+     * @return boolean
+     */
+    public function hasRole(string $role): bool
     {
         return in_array($role, $this->capabilities);
     }
 
-    public function hasAnyRoles($roles = [])
+    /**
+     * @param array $roles
+     * @return boolean
+     */
+    public function hasAnyRoles($roles = []): bool
     {
         if (!empty($roles)) {
             foreach ($roles as $role) {
@@ -22,12 +31,18 @@ trait HasRoles
         return false;
     }
 
-    public function getCapabilitiesAttribute()
+    /**
+     * @return array
+     */
+    public function getCapabilitiesAttribute(): array
     {
         return array_keys($this->getMeta('wp_capabilities'));
     }
 
-    public function getIsAdminAttribute()
+    /**
+     * @return boolean
+     */
+    public function getIsAdminAttribute(): bool
     {
         return $this->hasRole('administrator');
     }

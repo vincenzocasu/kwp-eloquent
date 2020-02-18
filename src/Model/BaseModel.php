@@ -9,6 +9,7 @@ class BaseModel extends EloquentModel
 {
     use HasWordPressDbConn;
 
+    /** @var string */
     public $timestamps = false;
 
     public function __construct(array $attributes = [])
