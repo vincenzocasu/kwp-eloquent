@@ -1,11 +1,11 @@
 {
-    "name": "mallardduck/wordpress-eloquent",
+    "name": "mallardduck/wp-eloquent-models",
     "description": "A Laravel wrapper for wordpress which turns all Wordpress models into Laravel Eloquent Models.",
     "keywords": ["wordpress", "eloquent", "laravel"],
-    "homepage": "https://github.com/mallardduck/wordpress-eloquent",
+    "homepage": "https://github.com/mallardduck/wp-eloquent-models",
     "support": {
-        "issues": "https://github.com/mallardduck/wordpress-eloquent/issues",
-        "source": "https://github.com/mallardduck/wordpress-eloquent"
+        "issues": "https://github.com/mallardduck/wp-eloquent-models/issues",
+        "source": "https://github.com/mallardduck/wp-eloquent-models"
     },
     "authors": [
         {
