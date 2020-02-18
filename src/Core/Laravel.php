@@ -7,6 +7,7 @@ use Config;
 class Laravel
 {
 
+    // phpcs:ignore
     protected static $_capsule;
 
     /**

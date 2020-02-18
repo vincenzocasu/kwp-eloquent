@@ -12,8 +12,8 @@ class Post extends BaseModel
     protected $primaryKey = 'ID';
     protected $post_type = null;
 
-    const CREATED_AT = 'post_date';
-    const UPDATED_AT = 'post_modified';
+    public const CREATED_AT = 'post_date';
+    public const UPDATED_AT = 'post_modified';
     
     public function newQuery()
     {
@@ -52,7 +52,8 @@ class Post extends BaseModel
 
     public function attachments()
     {
-        return $this->hasMany(\WPEloquent\Model\Attachment::class, 'post_parent', 'ID')->where('post_type', 'attachment');
+        return $this->hasMany(\WPEloquent\Model\Attachment::class, 'post_parent', 'ID')
+                    ->where('post_type', 'attachment');
     }
 
     public function tags()

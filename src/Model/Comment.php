@@ -13,7 +13,7 @@ class Comment extends BaseModel
     protected $fillable   = [];
     public $timestamps    = false;
 
-    const CREATED_AT = 'comment_date';
+    public const CREATED_AT = 'comment_date';
 
     public function post()
     {

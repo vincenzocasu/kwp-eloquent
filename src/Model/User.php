@@ -13,7 +13,7 @@ class User extends BaseModel
     protected $table      = 'users';
     protected $primaryKey = 'ID';
 
-    const CREATED_AT = 'user_registered';
+    public const CREATED_AT = 'user_registered';
 
     public function posts()
     {
