@@ -1,4 +1,5 @@
-# Wordpress Laravel Eloquent Models
+Wordpress Laravel Eloquent Models
+===========================
 
 <p align="center">
 <img src="http://drewjbartlett.com/images/github/logo-laravel.svg">
@@ -13,8 +14,8 @@ This is a great boiler plate based off [Eloquent](https://laravel.com/docs/5.4/e
 
 *Note:* This is documentation for additional functionality on top of Eloquent. For documentation on all of Eloquent's features you visit the [documentation](https://laravel.com/docs/5.4/eloquent).
 
-## Overview
- - [Installation](#installation)
+# Overview
+ - [Installation](#installing-wpeloquent)
  - [Setup](#setup---common)
  - [Setup with Laravel](#setup-with-laravel)
  - [Posts](#posts)
@@ -27,11 +28,26 @@ This is a great boiler plate based off [Eloquent](https://laravel.com/docs/5.4/e
  - [Extending your own models](#extending-your-own-models)
  - [Query Logs](#query-logs)
 
-### Installation
+## Installing WPEloquent
 
-    composer require mallardduck/wordpress-eloquent
+The recommended way to install WPEloquent is through
+[Composer](https://getcomposer.org/).
 
-### Setup - Common
+```bash
+composer require mallardduck/wordpress-eloquent
+```
+
+## Version Guidance
+
+| Version | Status     | Packagist           | Namespace    | Repo                | `illuminate/database` | PHP Version |
+|---------|------------|---------------------|--------------|---------------------|---------------------|-------|-------------|
+| v0.2.1    | Upstream | `drewjbartlett/wordpress-eloquent` | `WPEloquent` | [v0.2.1][upstream-latest-repo] | `5.4.*`    | `>= 5.6.4`      |
+| 0.3.x    | Maintained | `mallardduck/wordpress-eloquent` | `WPEloquent` | [0.3.0][wpeloquent-0.3.0]  | `5.5`   | `>= 7.1`      |
+
+[upstream-latest-repo]: https://github.com/drewjbartlett/wordpress-eloquent/tree/v0.2.1
+[wpeloquent-0.3.0]: https://github.com/mallardduck/wordpress-eloquent/tree/v0.3.0
+
+## Setup - Common
 
 ```php
 require_once('vendor/autoload.php');
@@ -64,7 +80,7 @@ require_once('vendor/autoload.php');
 
 If you wanted to enable this on your entire WP install you could create a file with the above code to drop in the `mu-plugins` folder.
 
-### Setup with Laravel
+## Setup with Laravel
 
 These directions are for when you want to work with WordPress database using Eloqent inside Laravel. The easiest mehtod is making a new config inside Laravel's `config/database.php`. For example:
 
@@ -90,6 +106,13 @@ These directions are for when you want to work with WordPress database using Elo
     ],
 ```
 *Note:* In this example the WordPress database and Laravel database can be accessed on the same server by the same MySQL user. The laravel `.env` of your project may need to be adjusted to match this example.
+
+Then in your `AppServiceProvider` add the following line:
+```php
+BaseModel::setDefaultConnection('wordpress');
+```
+
+## Supported Models
 
 ### Posts
 
@@ -228,7 +251,7 @@ use \WPEloquent\Model\Link;
 $siteurl = Link::find(1);
 ```
 
-### Extending your own models
+## Extending your own models
 
 If you want to add your own functionality to a model, for instance a `User` you can do so like this:
 
@@ -268,7 +291,24 @@ class Post extends \WPEloquent\Model\Post {
 Post::with(['categories', 'countries'])->find(1);
 ```
 
-### Query Logs
+Or maybe you need to access a custom post type, like:
+
+```php
+namespace App\Model;
+
+class CustomPostType extends \WPEloquent\Model\Post {
+    protected $post_type  = 'custom_post_type';
+
+    public static function getBySlug(string $slug): self
+    {
+        return self::where('post_name', $slug)->firstOrfail();
+    }
+}
+
+CustomPostType::with(['categories', 'countries'])->find(1);
+```
+
+## Query Logs
 
 Sometimes it's helpful to see the query logs for debugging. You can enable the logs by passing `log` is set to `true` (see [setup](#setup)) on the `Laravel::connect` method. Logs are retrieved by running.
 
