@@ -74,4 +74,3 @@ class Laravel {
         return self::getConnection()->getQueryLog();
     }
 }
-?>
