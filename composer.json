@@ -1,5 +1,5 @@
 {
-    "name": "mallardduck/wp-eloquent-models",
+    "name": "cmachu/wp-eloquent-models",
     "description": "A Laravel wrapper for wordpress which turns all Wordpress models into Laravel Eloquent Models.",
     "keywords": ["wordpress", "eloquent", "laravel"],
     "homepage": "https://github.com/mallardduck/wp-eloquent-models",

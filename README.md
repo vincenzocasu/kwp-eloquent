@@ -1,4 +1,4 @@
-Wordpress Laravel Eloquent Models
+Wordpress Laravel Eloquent Models PHP >= 8.1
 ===========================
 
 <p align="center">
@@ -6,7 +6,7 @@ Wordpress Laravel Eloquent Models
 <img src="http://drewjbartlett.com/images/github/wordpress-logo.png">
 </p>
 
-A library that converts converts wordpress tables into [Laravel Eloquent Models](https://laravel.com/docs/5.4/eloquent). This is can be helpful for any wordpress project where maybe you'd rather use the awesome features of Laravel's Eloquent.
+A forked library for PHP >= 8.1 that converts converts wordpress tables into [Laravel Eloquent Models](https://laravel.com/docs/5.4/eloquent). This is can be helpful for any wordpress project where maybe you'd rather use the awesome features of Laravel's Eloquent.
 
 Or maybe you're building a project using Laravel and Roots Bedrock/Sage/etc and want to access WordPress data within Laravel. Or maybe you're writing an API with something like [Slim](https://www.slimframework.com/) or better yet [Lumen](https://lumen.laravel.com/) don't want to increase your load time by loading the entire WP core.
 
@@ -38,17 +38,7 @@ composer require mallardduck/wp-eloquent-models
 ```
 
 ## Version Guidance
-
-| Version     | Status     | Packagist     | Namespace     | Repo     | illuminate/database     | PHP Version     |
-|-------------|------------|---------------|---------------|----------|-------------------------|-----------------|
-| v0.2.1    | Upstream | `drewjbartlett/wordpress-eloquent` | `WPEloquent` | [v0.2.1][upstream-latest-repo] | `5.4.*`    | `>= 5.6.4`      |
-| v0.3.x    | Maintained | `mallardduck/wp-eloquent-models` | `WPEloquent` | [v0.3.0][wpeloquent-v0.3.0]  | `5.5`   | `>= 7.1`      |
-| v0.4.x    | Maintained | `mallardduck/wp-eloquent-models` | `WPEloquent` | [v0.4.1][wpeloquent-v0.4.1]  | `5.7.10` or `5.8` or `6.x`   | `>= 7.2`      |
-
-
-[upstream-latest-repo]: https://github.com/drewjbartlett/wordpress-eloquent/tree/v0.2.1
-[wpeloquent-v0.3.0]: https://github.com/mallardduck/wp-eloquent-models/tree/v0.3.0
-[wpeloquent-v0.4.1]: https://github.com/mallardduck/wp-eloquent-models/tree/v0.4.1
+Current version: 0.4.2
 
 ## Setup - Common
 
