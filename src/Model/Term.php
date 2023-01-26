@@ -14,6 +14,12 @@ class Term extends BaseModel
     /** @var string */
     protected $primaryKey = 'term_id';
 
+    /** @var array */
+    protected $fillable = [
+        'term_id', 'name', 'slug', 'term_group'
+    ];
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Collection
      */

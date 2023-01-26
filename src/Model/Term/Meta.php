@@ -7,5 +7,10 @@ use WPEloquent\Model\BaseMeta;
 class Meta extends BaseMeta
 {
     /** @var string */
-    protected $table = 'term_meta';
+    protected $table = 'termmeta';
+
+    /** @var array */
+    protected $fillable = [
+        'meta_id', 'term_id', 'meta_key', 'meta_value'
+    ];
 }
