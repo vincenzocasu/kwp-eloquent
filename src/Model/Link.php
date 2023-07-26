@@ -2,7 +2,7 @@
 
 namespace WPEloquent\Model;
 
-class Links extends BaseModel
+class Link extends BaseModel
 {
     
     /** @var string */
